@@ -1,4 +1,4 @@
-class ApplicationController < ActionController::Base
+class ApplicationController < ActionController::API
   protect_from_forgery with: :exception
   include SessionsHelper
 
@@ -11,7 +11,7 @@ class ApplicationController < ActionController::Base
         redirect_to login_url
       end
     end
-    
+
     def logged_in_admin
       unless logged_in?
         unless current_user.admin?
