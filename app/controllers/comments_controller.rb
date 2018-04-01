@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :set_headers
 
   def index
     entry = Entry.find(params[:entry_id])
@@ -16,7 +17,7 @@ class CommentsController < ApplicationController
     entry = Entry.find(params[:entry_id])
     comment = entry.comments.new(comment_params)
     if comment.save
-      render json: {status: 'SUCCESS', message: 'Created comment', data: comment}, status: :ok
+      render json: {status: 'SUCCESS', message: 'Created comment', data: comment}, status: :created
     else
       render json: {status: 'ERROR', message: 'Comment not saved', data: comment.errors}, status: :unprocessable_entity
     end
@@ -42,6 +43,10 @@ class CommentsController < ApplicationController
   private
   def comment_params
     params.permit(:author, :comment)
+  end
+
+  def set_headers
+    response.headers["Content-Type"] = "application/json"
   end
 
 end

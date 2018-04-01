@@ -1,4 +1,5 @@
 class EntriesController < ApplicationController
+  before_action :set_headers
 
   def index
     entries = Entry.order('created_at DESC');
@@ -14,7 +15,7 @@ class EntriesController < ApplicationController
   def create
     entry = Entry.new(entry_params)
     if entry.save
-      render json: {status: 'SUCCESS', message: 'Created entry', data: entry}, status: :ok
+      render json: {status: 'SUCCESS', message: 'Created entry', data: entry}, status: :created
     else
       render json: {status: 'ERROR', message: 'Entrie not saved', data: entry.errors}, status: :unprocessable_entity
     end
@@ -39,6 +40,10 @@ class EntriesController < ApplicationController
   private
   def entry_params
     params.permit(:title, :subtitle, :body)
+  end
+
+  def set_headers
+    response.headers["Content-Type"] = "application/json"
   end
 
 end

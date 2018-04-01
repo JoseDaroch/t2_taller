@@ -10714,3 +10714,159 @@ Processing by CommentsController#index as */*
 Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms)
 
 
+Started GET "/entries" for 127.0.0.1 at 2018-04-01 19:05:11 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  
+ActionController::RoutingError (No route matches [GET] "/entries"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/news" for 127.0.0.1 at 2018-04-01 19:05:27 -0300
+Processing by EntriesController#index as */*
+  [1m[36mEntry Load (1.3ms)[0m  [1m[34mSELECT "entries".* FROM "entries" ORDER BY "entries"."created_at" DESC, created_at DESC[0m
+Completed 200 OK in 69ms (Views: 10.3ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/news/3/comments" for 127.0.0.1 at 2018-04-01 19:05:43 -0300
+Processing by CommentsController#index as */*
+  Parameters: {"entry_id"=>"3"}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (3.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 ORDER BY created_at DESC[0m  [["entry_id", 3]]
+Completed 200 OK in 79ms (Views: 10.4ms | ActiveRecord: 6.6ms)
+
+
+Started DELETE "/news/3" for 127.0.0.1 at 2018-04-01 19:05:55 -0300
+Processing by EntriesController#destroy as */*
+  Parameters: {"id"=>"3"}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = $1[0m  [["entry_id", 3]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 2]]
+  [1m[35mSQL (0.3ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 3]]
+  [1m[35mSQL (1.0ms)[0m  [1m[31mDELETE FROM "entries" WHERE "entries"."id" = $1[0m  [["id", 3]]
+  [1m[35m (55.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 66ms (ActiveRecord: 59.3ms)
+
+
+Started DELETE "/news/" for 127.0.0.1 at 2018-04-01 19:06:07 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/news"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/news" for 127.0.0.1 at 2018-04-01 19:06:11 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/news"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started GET "/news" for 127.0.0.1 at 2018-04-01 19:06:16 -0300
+Processing by EntriesController#index as */*
+  [1m[36mEntry Load (1.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" ORDER BY "entries"."created_at" DESC, created_at DESC[0m
+Completed 200 OK in 5ms (Views: 2.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/news/3/comments" for 127.0.0.1 at 2018-04-01 19:06:22 -0300
+Processing by CommentsController#index as */*
+  Parameters: {"entry_id"=>"3"}
+  [1m[36mEntry Load (1.2ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 404 Not Found in 3ms (ActiveRecord: 1.2ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Entry with 'id'=3):
+  
+app/controllers/comments_controller.rb:4:in `index'
+Started GET "/news/" for 127.0.0.1 at 2018-04-01 19:18:46 -0300
+Processing by EntriesController#index as */*
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT "entries".* FROM "entries" ORDER BY "entries"."created_at" DESC, created_at DESC[0m
+Completed 200 OK in 20ms (Views: 7.5ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/news/" for 127.0.0.1 at 2018-04-01 19:19:21 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#index as */*
+  [1m[36mEntry Load (1.0ms)[0m  [1m[34mSELECT "entries".* FROM "entries" ORDER BY "entries"."created_at" DESC, created_at DESC[0m
+Completed 200 OK in 21ms (Views: 6.6ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/news/5" for 127.0.0.1 at 2018-04-01 19:24:59 -0300
+Processing by EntriesController#show as */*
+  Parameters: {"id"=>"5"}
+  [1m[36mEntry Load (0.8ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+Completed 404 Not Found in 13ms (ActiveRecord: 0.8ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Entry with 'id'=5):
+  
+app/controllers/entries_controller.rb:10:in `show'
