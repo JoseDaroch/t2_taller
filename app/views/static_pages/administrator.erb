@@ -1,0 +1,48 @@
+<h1>Administrator site</h1>
+
+  <% if current_user.admin? %>
+    <div class="row">
+      <aside class="col-md-4">
+        <section class="entry_form">
+          <%= form_for(@entry) do |f| %>
+
+            <%= f.label :titulo %><br>
+            <%= f.text_field :titulo, class: 'form-control'  %><br>
+
+            <%= f.label :bajada %><br>
+            <%= f.text_area :bajada, class: 'form-control'  %><br>
+
+            <%= f.label :cuerpo %><br>
+            <%= f.text_area :cuerpo, class: 'form-control'  %><br>
+
+            <%= f.submit "Create", class: "btn btn-default btn-lg" %><br><br>
+            <%= link_to "Back", root_path, class: "btn btn-default btn-lg"%>
+          <% end %>
+        </section>
+      </aside>
+    </div>
+    <br><br>
+      <div class="col-md-4">
+          <% if @entries.any?%>
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Titulo</th>
+                  <th colspan="3"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <% @entries.each do |e| %>
+                  <td><%= link_to e.titulo, e %></td>
+                  <% if current_user.try(:admin?)%>
+                    <td><%= link_to 'Edit', edit_entry_path(e.id) %></td>
+                    <td><%= link_to 'Destroy', e, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+                  <% end %>
+                <% end %>
+              </tbody>
+            </table class="table">
+          <% end %>
+      </div>
+    </div>
+    </div>
+  <% end %>

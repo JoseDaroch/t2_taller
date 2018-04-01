@@ -1,0 +1,14 @@
+<% provide(:title, "Home") %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= yield(:title) %> | Ultimo minuto</title>
+  </head>
+
+  <h1>News Feed</h1>
+  <% if @entries.any? %>
+    <ol class="entries">
+      <%= render @entries %>
+    </ol>
+  <% end %>
+</html>

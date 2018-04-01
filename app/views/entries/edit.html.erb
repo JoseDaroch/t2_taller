@@ -1,0 +1,23 @@
+<% if current_user.admin? %>
+  <div class="row">
+    <aside class="col-md-4">
+      <section class="entry_form">
+        <h2> Edit Entry </h2><br><br>
+        <%= form_for(@entry) do |f| %>
+
+          <%= f.label :titulo %><br>
+          <%= f.text_field :titulo, class: 'form-control'  %><br>
+
+          <%= f.label :bajada %><br>
+          <%= f.text_area :bajada, class: 'form-control'  %><br>
+
+          <%= f.label :cuerpo %><br>
+          <%= f.text_area :cuerpo, class: 'form-control'  %><br>
+
+          <%= f.submit "Update", class: "btn btn-default btn-lg" %><br><br>
+          <%= link_to 'Back', root_path, class: "btn btn-default btn-lg"%>
+        <% end %>
+      </section>
+    </aside>
+  </div>
+<% end %>
