@@ -1,56 +1,44 @@
 class EntriesController < ApplicationController
-  before_action :logged_in_admin, only: [:create, :destroy]
-  before_action :correct_user, only: :destroy
 
-  def show
-    @entry = Entry.find(params[:id])
-    @comments = @entry.comments.all
+  def index
+    entries = Entry.order('created_at DESC');
+    render json: {status: 'SUCCESS', message: 'Loaded entries', data: entries}, status: :ok
   end
 
-  def new
-    @entry = Entry.new
+  def show
+    entry = Entry.find(params[:id])
+    render json: {status: 'SUCCESS', message: 'Loaded entry', data: entry}, status: :ok
+
   end
 
   def create
-    @entry = current_user.entries.new(entry_params)
-    if @entry.save
-      flash[:success] = "Entry created!"
-      redirect_to root_url
+    entry = Entry.new(entry_params)
+    if entry.save
+      render json: {status: 'SUCCESS', message: 'Created entry', data: entry}, status: :ok
     else
-      @feed_items = []
-      redirect_to root_url
-    end
-  end
-
-  def edit
-    @entry = Entry.find(params[:id])
-  end
-
-  def update
-    @entry = Entry.find(params[:id])
-    respond_to do |format|
-      if @entry.update(entry_params)
-        format.html { redirect_to @entry, notice: 'Entry was successfully updated.' }
-      else
-        format.html { render :edit }
-      end
+      render json: {status: 'ERROR', message: 'Entrie not saved', data: entry.errors}, status: :unprocessable_entity
     end
   end
 
   def destroy
-    @entry.destroy
-    flash[:success] = "Entry deleted"
-    redirect_to root_url
+    entry = Entry.find(params[:id])
+    entry.destroy
+    render json: {status: 'SUCCESS', message: 'Deleted entry', data: entry}, status: :ok
   end
 
+  def update
+    entry = Entry.find(params[:id])
+    if entry.update_attributes(entry_params)
+      render json: {status: 'SUCCESS', message: 'Updated entry', data: entry}, status: :ok
+    else
+      render json: {status: 'ERROR', message: 'Entry not updated', data: entry.errors}, status: :unprocessable_entity
+    end
+  end
+
+
   private
+  def entry_params
+    params.permit(:title, :subtitle, :body)
+  end
 
-    def entry_params
-      params.require(:entry).permit(:titulo, :bajada, :cuerpo)
-    end
-
-    def correct_user
-      @entry = current_user.entries.find_by(id: params[:id])
-      redirect_to root_url if @entry.nil?
-    end
 end

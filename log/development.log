@@ -10038,3 +10038,679 @@ Processing by Api::V1::CommentsController#index as */*
 Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 1.3ms)
 
 
+Started POST "/api/v1/entries" for 127.0.0.1 at 2018-04-01 02:55:48 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by Api::V1::EntriesController#create as */*
+  Parameters: {"titulo"=>"UFF", "bajada"=>"DAMN", "cuerpo"=>"JOSE", "entry"=>{"titulo"=>"UFF", "bajada"=>"DAMN", "cuerpo"=>"JOSE"}}
+Unpermitted parameter: entry
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (17.9ms)[0m  [1m[32mINSERT INTO "entries" ("titulo", "bajada", "cuerpo", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["titulo", "UFF"], ["bajada", "DAMN"], ["cuerpo", "JOSE"], ["created_at", "2018-04-01 05:55:49.877462"], ["updated_at", "2018-04-01 05:55:49.877462"]]
+  [1m[35m (44.7ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 73ms (Views: 1.1ms | ActiveRecord: 66.7ms)
+
+
+Started GET "/entries" for 127.0.0.1 at 2018-04-01 02:56:07 -0300
+  
+AbstractController::ActionNotFound (The action 'index' could not be found for EntriesController):
+  
+actionpack (5.0.6) lib/abstract_controller/base.rb:121:in `process'
+actionview (5.0.6) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.6) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.6) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.6) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.6) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.6) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.6) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.6) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.6) lib/action_dispatch/routing/route_set.rb:727:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:25:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.0.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.6) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.6) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.6) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.6) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.6) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.6) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.6) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+  [1m[36mActiveRecord::SchemaMigration Load (7.8ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (35.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (305.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "t1_taller_development"[0m
+  [1m[35m (136.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "t1_taller_test"[0m
+  [1m[35m (80.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (80.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT pg_try_advisory_lock(3375585411118961250);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to CreateUsers (20180318164128)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying, "password" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (12.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180318164128"]]
+  [1m[35m (1.9ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddIndexToUsersEmail (20180318164236)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180318164236"]]
+  [1m[35m (7.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPasswordDigestToUsers (20180318164310)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.4ms)[0m  [1m[35mALTER TABLE "users" ADD "password_digest" character varying[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180318164310"]]
+  [1m[35m (3.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddAdminToUsers (20180318181327)
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (20.3ms)[0m  [1m[35mALTER TABLE "users" ADD "admin" boolean DEFAULT 'f'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180318181327"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateEntries (20180401173506)
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "entries" ("id" serial primary key, "title" character varying, "subtitle" text, "body" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180401173506"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateComments (20180401173627)
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" serial primary key, "author" character varying, "comment" text, "entry_id" integer, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, CONSTRAINT "fk_rails_24508b7aa5"
+FOREIGN KEY ("entry_id")
+  REFERENCES "entries" ("id")
+)[0m
+  [1m[35m (4.3ms)[0m  [1m[35mCREATE  INDEX  "index_comments_on_entry_id" ON "comments"  ("entry_id")[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180401173627"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-04-01 17:41:38.902930"], ["updated_at", "2018-04-01 17:41:38.902930"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT pg_advisory_unlock(3375585411118961250)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/news" for 127.0.0.1 at 2018-04-01 14:42:49 -0300
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by EntriesController#index as */*
+  [1m[36mEntry Load (0.8ms)[0m  [1m[34mSELECT "entries".* FROM "entries" ORDER BY "entries"."created_at" DESC, created_at DESC[0m
+Completed 200 OK in 82ms (Views: 1.9ms | ActiveRecord: 2.1ms)
+
+
+Started POST "/news" for 127.0.0.1 at 2018-04-01 14:43:27 -0300
+Processing by EntriesController#create as */*
+  Parameters: {"title"=>"WENTITLE", "entry"=>{"title"=>"WENTITLE"}}
+Unpermitted parameter: entry
+  [1m[35m (3.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 147ms (Views: 0.3ms | ActiveRecord: 7.2ms)
+
+
+Started POST "/news" for 127.0.0.1 at 2018-04-01 14:43:52 -0300
+Processing by EntriesController#create as */*
+  Parameters: {"title"=>"WENTITLE", "subtitle"=>"Subtitolo", "body"=>"wololo", "entry"=>{"title"=>"WENTITLE", "subtitle"=>"Subtitolo", "body"=>"wololo"}}
+Unpermitted parameter: entry
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "entries" ("title", "subtitle", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "WENTITLE"], ["subtitle", "Subtitolo"], ["body", "wololo"], ["created_at", "2018-04-01 17:43:52.266370"], ["updated_at", "2018-04-01 17:43:52.266370"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 7ms (Views: 0.6ms | ActiveRecord: 2.5ms)
+
+
+Started POST "/news" for 127.0.0.1 at 2018-04-01 14:44:14 -0300
+Processing by EntriesController#create as */*
+  Parameters: {"title"=>"NOTICIO 2", "subtitle"=>"Subtitolo", "body"=>"wololo", "entry"=>{"title"=>"NOTICIO 2", "subtitle"=>"Subtitolo", "body"=>"wololo"}}
+Unpermitted parameter: entry
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "entries" ("title", "subtitle", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "NOTICIO 2"], ["subtitle", "Subtitolo"], ["body", "wololo"], ["created_at", "2018-04-01 17:44:14.753060"], ["updated_at", "2018-04-01 17:44:14.753060"]]
+  [1m[35m (36.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 41ms (Views: 0.7ms | ActiveRecord: 37.3ms)
+
+
+Started POST "/news" for 127.0.0.1 at 2018-04-01 14:44:19 -0300
+Processing by EntriesController#create as */*
+  Parameters: {"title"=>"NOTICIO 3", "subtitle"=>"Subtitolo", "body"=>"wololo", "entry"=>{"title"=>"NOTICIO 3", "subtitle"=>"Subtitolo", "body"=>"wololo"}}
+Unpermitted parameter: entry
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "entries" ("title", "subtitle", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["title", "NOTICIO 3"], ["subtitle", "Subtitolo"], ["body", "wololo"], ["created_at", "2018-04-01 17:44:19.453879"], ["updated_at", "2018-04-01 17:44:19.453879"]]
+  [1m[35m (36.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 41ms (Views: 0.4ms | ActiveRecord: 37.4ms)
+
+
+Started POST "/news" for 127.0.0.1 at 2018-04-01 14:45:17 -0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"title":"NOTICIO 4 larga",
+	"body":"Muestra todas las noticias en la colección, en su versión . Esto quiere decir que cada noticia no trae comentarios, y el largo máximo del cuerpo de (campo body) una noticia no supera los 500 caracteres. En el caso que el cuerpo de una noticia supere los 500 caracteres, debe ser recortada para ajustarse a esta restricción. Actualiza una noticia con identificador {id}. Se deben enviar uno o varios campos del objeto noticia. Este método no tiene permitido actualizar los campos id y created_at. Actualiza un comentario asociado a la noticia con id {news_id} identificado con el id {id}. Se deben enviar todos los campos del objeto comentario. Este método no tiene permitido actualizar los campos id y created_at.
+"
+}
+  
+ActionDispatch::ParamsParser::ParseError (743: unexpected token at '{
+	"title":"NOTICIO 4 larga",
+	"body":"Muestra todas las noticias en la colección, en su versión . Esto quiere decir que cada noticia no trae comentarios, y el largo máximo del cuerpo de (campo body) una noticia no supera los 500 caracteres. En el caso que el cuerpo de una noticia supere los 500 caracteres, debe ser recortada para ajustarse a esta restricción. Actualiza una noticia con identificador {id}. Se deben enviar uno o varios campos del objeto noticia. Este método no tiene permitido actualizar los campos id y created_at. Actualiza un comentario asociado a la noticia con id {news_id} identificado con el id {id}. Se deben enviar todos los campos del objeto comentario. Este método no tiene permitido actualizar los campos id y created_at.
+"
+}'):
+  
+actionpack (5.0.7) lib/action_dispatch/http/parameters.rb:88:in `rescue in parse_formatted_parameters'
+actionpack (5.0.7) lib/action_dispatch/http/parameters.rb:82:in `parse_formatted_parameters'
+actionpack (5.0.7) lib/action_dispatch/http/request.rb:354:in `block in POST'
+rack (2.0.4) lib/rack/request.rb:57:in `fetch'
+rack (2.0.4) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.0.7) lib/action_dispatch/http/request.rb:353:in `POST'
+actionpack (5.0.7) lib/action_controller/metal/params_wrapper.rb:282:in `_wrapper_enabled?'
+actionpack (5.0.7) lib/action_controller/metal/params_wrapper.rb:231:in `process_action'
+activerecord (5.0.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.7) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.7) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:727:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.0.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/news" for 127.0.0.1 at 2018-04-01 14:45:28 -0300
+Processing by EntriesController#create as */*
+  Parameters: {"title"=>"NOTICIO 4 larga", "body"=>"Muestra todas las noticias en la colección, en su versión . Esto quiere decir que cada noticia no trae comentarios, y el largo máximo del cuerpo de (campo body) una noticia no supera los 500 caracteres. En el caso que el cuerpo de una noticia supere los 500 caracteres, debe ser recortada para ajustarse a esta restricción. Actualiza una noticia con identificador {id}. Se deben enviar uno o varios campos del objeto noticia. Este método no tiene permitido actualizar los campos id y created_at. Actualiza un comentario asociado a la noticia con id {news_id} identificado con el id {id}. Se deben enviar todos los campos del objeto comentario. Este método no tiene permitido actualizar los campos id y created_at.", "entry"=>{"title"=>"NOTICIO 4 larga", "body"=>"Muestra todas las noticias en la colección, en su versión . Esto quiere decir que cada noticia no trae comentarios, y el largo máximo del cuerpo de (campo body) una noticia no supera los 500 caracteres. En el caso que el cuerpo de una noticia supere los 500 caracteres, debe ser recortada para ajustarse a esta restricción. Actualiza una noticia con identificador {id}. Se deben enviar uno o varios campos del objeto noticia. Este método no tiene permitido actualizar los campos id y created_at. Actualiza un comentario asociado a la noticia con id {news_id} identificado con el id {id}. Se deben enviar todos los campos del objeto comentario. Este método no tiene permitido actualizar los campos id y created_at."}}
+Unpermitted parameter: entry
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.3ms)[0m  [1m[32mINSERT INTO "entries" ("title", "body", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["title", "NOTICIO 4 larga"], ["body", "Muestra todas las noticias en la colección, en su versión . Esto quiere decir que cada noticia no trae comentarios, y el largo máximo del cuerpo de (campo body) una noticia no supera los 500 caracteres. En el caso que el cuerpo de una noticia supere los 500 caracteres, debe ser recortada para ajustarse a esta restricción. Actualiza una noticia con identificador {id}. Se deben enviar uno o varios campos del objeto noticia. Este método no tiene permitido actualizar los campos id y created_at. Actualiza un comentario asociado a la noticia con id {news_id} identificado con el id {id}. Se deben enviar todos los campos del objeto comentario. Este método no tiene permitido actualizar los campos id y created_at."], ["created_at", "2018-04-01 17:45:28.283415"], ["updated_at", "2018-04-01 17:45:28.283415"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 10ms (Views: 0.7ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/news" for 127.0.0.1 at 2018-04-01 14:45:33 -0300
+Processing by EntriesController#index as */*
+  Parameters: {"entry"=>{}}
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT "entries".* FROM "entries" ORDER BY "entries"."created_at" DESC, created_at DESC[0m
+Completed 200 OK in 3ms (Views: 2.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/news/1" for 127.0.0.1 at 2018-04-01 14:45:52 -0300
+Processing by EntriesController#show as */*
+  Parameters: {"id"=>"1", "entry"=>{}}
+  [1m[36mEntry Load (0.8ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/news/4" for 127.0.0.1 at 2018-04-01 14:45:59 -0300
+Processing by EntriesController#show as */*
+  Parameters: {"id"=>"4", "entry"=>{}}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 200 OK in 3ms (Views: 0.7ms | ActiveRecord: 0.5ms)
+
+
+Started PATCH "/news/4" for 127.0.0.1 at 2018-04-01 14:46:22 -0300
+Processing by EntriesController#update as */*
+  Parameters: {"title"=>"NOTICIO 4 larga", "subtitle"=>"AHORA TIENESUB", "body"=>"Muestra todas las noticias en la colección, en su versión . Esto quiere decir que cada noticia no trae comentarios, y el largo máximo del cuerpo de (campo body) una noticia no supera los 500 caracteres. En el caso que el cuerpo de una noticia supere los 500 caracteres, debe ser recortada para ajustarse a esta restricción. Actualiza una noticia con identificador {id}. Se deben enviar uno o varios campos del objeto noticia. Este método no tiene permitido actualizar los campos id y created_at. Actualiza un comentario asociado a la noticia con id {news_id} identificado con el id {id}. Se deben enviar todos los campos del objeto comentario. Este método no tiene permitido actualizar los campos id y created_at.", "id"=>"4", "entry"=>{"title"=>"NOTICIO 4 larga", "subtitle"=>"AHORA TIENESUB", "body"=>"Muestra todas las noticias en la colección, en su versión . Esto quiere decir que cada noticia no trae comentarios, y el largo máximo del cuerpo de (campo body) una noticia no supera los 500 caracteres. En el caso que el cuerpo de una noticia supere los 500 caracteres, debe ser recortada para ajustarse a esta restricción. Actualiza una noticia con identificador {id}. Se deben enviar uno o varios campos del objeto noticia. Este método no tiene permitido actualizar los campos id y created_at. Actualiza un comentario asociado a la noticia con id {news_id} identificado con el id {id}. Se deben enviar todos los campos del objeto comentario. Este método no tiene permitido actualizar los campos id y created_at."}}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Unpermitted parameters: id, entry
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.2ms)[0m  [1m[33mUPDATE "entries" SET "subtitle" = $1, "updated_at" = $2 WHERE "entries"."id" = $3[0m  [["subtitle", "AHORA TIENESUB"], ["updated_at", "2018-04-01 17:46:22.166879"], ["id", 4]]
+  [1m[35m (13.9ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 21ms (Views: 0.5ms | ActiveRecord: 16.8ms)
+
+
+Started DELETE "/news/4" for 127.0.0.1 at 2018-04-01 14:46:36 -0300
+Processing by EntriesController#destroy as */*
+  Parameters: {"title"=>"NOTICIO 4 larga", "subtitle"=>"AHORA TIENESUB", "body"=>"Muestra todas las noticias en la colección, en su versión . Esto quiere decir que cada noticia no trae comentarios, y el largo máximo del cuerpo de (campo body) una noticia no supera los 500 caracteres. En el caso que el cuerpo de una noticia supere los 500 caracteres, debe ser recortada para ajustarse a esta restricción. Actualiza una noticia con identificador {id}. Se deben enviar uno o varios campos del objeto noticia. Este método no tiene permitido actualizar los campos id y created_at. Actualiza un comentario asociado a la noticia con id {news_id} identificado con el id {id}. Se deben enviar todos los campos del objeto comentario. Este método no tiene permitido actualizar los campos id y created_at.", "id"=>"4", "entry"=>{"title"=>"NOTICIO 4 larga", "subtitle"=>"AHORA TIENESUB", "body"=>"Muestra todas las noticias en la colección, en su versión . Esto quiere decir que cada noticia no trae comentarios, y el largo máximo del cuerpo de (campo body) una noticia no supera los 500 caracteres. En el caso que el cuerpo de una noticia supere los 500 caracteres, debe ser recortada para ajustarse a esta restricción. Actualiza una noticia con identificador {id}. Se deben enviar uno o varios campos del objeto noticia. Este método no tiene permitido actualizar los campos id y created_at. Actualiza un comentario asociado a la noticia con id {news_id} identificado con el id {id}. Se deben enviar todos los campos del objeto comentario. Este método no tiene permitido actualizar los campos id y created_at."}}
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = $1[0m  [["entry_id", 4]]
+  [1m[35mSQL (1.3ms)[0m  [1m[31mDELETE FROM "entries" WHERE "entries"."id" = $1[0m  [["id", 4]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 87ms (Views: 0.7ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/news/4" for 127.0.0.1 at 2018-04-01 14:46:41 -0300
+Processing by EntriesController#show as */*
+  Parameters: {"id"=>"4", "entry"=>{}}
+  [1m[36mEntry Load (0.4ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.4ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Entry with 'id'=4):
+  
+app/controllers/entries_controller.rb:9:in `show'
+Started GET "/news" for 127.0.0.1 at 2018-04-01 14:46:47 -0300
+Processing by EntriesController#index as */*
+  Parameters: {"entry"=>{}}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT "entries".* FROM "entries" ORDER BY "entries"."created_at" DESC, created_at DESC[0m
+Completed 200 OK in 4ms (Views: 2.8ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:48:22 -0300
+Processing by CommentsController#index as */*
+  Parameters: {"entry_id"=>"3", "comment"=>{}}
+  [1m[36mEntry Load (2.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (2.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 ORDER BY created_at DESC[0m  [["entry_id", 3]]
+Completed 200 OK in 30ms (Views: 1.4ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:48:58 -0300
+Processing by CommentsController#create as */*
+  Parameters: {"author"=>"Dendaos", "comment"=>"COmentario pro, muy buena new", "entry_id"=>"3"}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: entry_id
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[32mINSERT INTO "comments" ("author", "comment", "entry_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author", "Dendaos"], ["comment", "COmentario pro, muy buena new"], ["entry_id", 3], ["created_at", "2018-04-01 17:48:58.350299"], ["updated_at", "2018-04-01 17:48:58.350299"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 31ms (Views: 0.6ms | ActiveRecord: 5.8ms)
+
+
+Started PUT "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:49:15 -0300
+  
+ActionController::RoutingError (No route matches [PUT] "/news/3/comments"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started PUT "/news/3/comments/1" for 127.0.0.1 at 2018-04-01 14:49:24 -0300
+Processing by CommentsController#update as */*
+  Parameters: {"comment"=>"COmentario pro, muy mala new", "entry_id"=>"3", "id"=>"1"}
+  [1m[36mEntry Load (0.7ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 AND "comments"."id" = $2 LIMIT $3[0m  [["entry_id", 3], ["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: entry_id, id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "comments" SET "comment" = $1, "updated_at" = $2 WHERE "comments"."id" = $3[0m  [["comment", "COmentario pro, muy mala new"], ["updated_at", "2018-04-01 17:49:24.593337"], ["id", 1]]
+  [1m[35m (109.3ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 120ms (Views: 0.4ms | ActiveRecord: 111.6ms)
+
+
+Started PATCH "/news/3/comments/1" for 127.0.0.1 at 2018-04-01 14:49:40 -0300
+Processing by CommentsController#update as */*
+  Parameters: {"comment"=>"COmentario pro, muy wena en verdad la new", "entry_id"=>"3", "id"=>"1"}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (6.1ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 AND "comments"."id" = $2 LIMIT $3[0m  [["entry_id", 3], ["id", 1], ["LIMIT", 1]]
+Unpermitted parameters: entry_id, id
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  [1m[33mUPDATE "comments" SET "comment" = $1, "updated_at" = $2 WHERE "comments"."id" = $3[0m  [["comment", "COmentario pro, muy wena en verdad la new"], ["updated_at", "2018-04-01 17:49:40.679959"], ["id", 1]]
+  [1m[35m (70.4ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 85ms (Views: 0.5ms | ActiveRecord: 78.3ms)
+
+
+Started GET "/news/3/comments/1" for 127.0.0.1 at 2018-04-01 14:49:47 -0300
+Processing by CommentsController#show as */*
+  Parameters: {"entry_id"=>"3", "id"=>"1", "comment"=>{}}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 AND "comments"."id" = $2 LIMIT $3[0m  [["entry_id", 3], ["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.5ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:50:14 -0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"autho":"ERIA"
+	"comment":"COmentario pro, el de arriba no sae na"
+}
+  
+ActionDispatch::ParamsParser::ParseError (743: unexpected token at '{
+	"autho":"ERIA"
+	"comment":"COmentario pro, el de arriba no sae na"
+}'):
+  
+actionpack (5.0.7) lib/action_dispatch/http/parameters.rb:88:in `rescue in parse_formatted_parameters'
+actionpack (5.0.7) lib/action_dispatch/http/parameters.rb:82:in `parse_formatted_parameters'
+actionpack (5.0.7) lib/action_dispatch/http/request.rb:354:in `block in POST'
+rack (2.0.4) lib/rack/request.rb:57:in `fetch'
+rack (2.0.4) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.0.7) lib/action_dispatch/http/request.rb:353:in `POST'
+actionpack (5.0.7) lib/action_controller/metal/params_wrapper.rb:282:in `_wrapper_enabled?'
+actionpack (5.0.7) lib/action_controller/metal/params_wrapper.rb:231:in `process_action'
+activerecord (5.0.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.7) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.7) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:727:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.0.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:50:23 -0300
+Error occurred while parsing request parameters.
+Contents:
+
+{
+	"author":"ERIA"
+	"comment":"COmentario pro, el de arriba no sae na"
+}
+  
+ActionDispatch::ParamsParser::ParseError (743: unexpected token at '{
+	"author":"ERIA"
+	"comment":"COmentario pro, el de arriba no sae na"
+}'):
+  
+actionpack (5.0.7) lib/action_dispatch/http/parameters.rb:88:in `rescue in parse_formatted_parameters'
+actionpack (5.0.7) lib/action_dispatch/http/parameters.rb:82:in `parse_formatted_parameters'
+actionpack (5.0.7) lib/action_dispatch/http/request.rb:354:in `block in POST'
+rack (2.0.4) lib/rack/request.rb:57:in `fetch'
+rack (2.0.4) lib/rack/request.rb:57:in `fetch_header'
+actionpack (5.0.7) lib/action_dispatch/http/request.rb:353:in `POST'
+actionpack (5.0.7) lib/action_controller/metal/params_wrapper.rb:282:in `_wrapper_enabled?'
+actionpack (5.0.7) lib/action_controller/metal/params_wrapper.rb:231:in `process_action'
+activerecord (5.0.7) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+actionpack (5.0.7) lib/abstract_controller/base.rb:126:in `process'
+actionview (5.0.7) lib/action_view/rendering.rb:30:in `process'
+actionpack (5.0.7) lib/action_controller/metal.rb:190:in `dispatch'
+actionpack (5.0.7) lib/action_controller/metal.rb:262:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `each'
+actionpack (5.0.7) lib/action_dispatch/journey/router.rb:26:in `serve'
+actionpack (5.0.7) lib/action_dispatch/routing/route_set.rb:727:in `call'
+warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+warden (1.2.7) lib/warden/manager.rb:35:in `call'
+rack (2.0.4) lib/rack/etag.rb:25:in `call'
+rack (2.0.4) lib/rack/conditional_get.rb:38:in `call'
+rack (2.0.4) lib/rack/head.rb:12:in `call'
+activerecord (5.0.7) lib/active_record/migration.rb:553:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+activesupport (5.0.7) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+activesupport (5.0.7) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+activesupport (5.0.7) lib/active_support/callbacks.rb:90:in `run_callbacks'
+actionpack (5.0.7) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started POST "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:50:28 -0300
+Processing by CommentsController#create as */*
+  Parameters: {"author"=>"ERIA", "comment"=>"COmentario pro, el de arriba no sae na", "entry_id"=>"3"}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: entry_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "comments" ("author", "comment", "entry_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author", "ERIA"], ["comment", "COmentario pro, el de arriba no sae na"], ["entry_id", 3], ["created_at", "2018-04-01 17:50:28.856732"], ["updated_at", "2018-04-01 17:50:28.856732"]]
+  [1m[35m (39.2ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 45ms (Views: 0.5ms | ActiveRecord: 40.6ms)
+
+
+Started GET "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:50:46 -0300
+Processing by CommentsController#index as */*
+  Parameters: {"entry_id"=>"3", "comment"=>{}}
+  [1m[36mEntry Load (0.5ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 ORDER BY created_at DESC[0m  [["entry_id", 3]]
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/news/4/comments" for 127.0.0.1 at 2018-04-01 14:50:53 -0300
+Processing by CommentsController#index as */*
+  Parameters: {"entry_id"=>"4", "comment"=>{}}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+Completed 404 Not Found in 2ms (ActiveRecord: 0.6ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Entry with 'id'=4):
+  
+app/controllers/comments_controller.rb:4:in `index'
+Started GET "/news/1/comments" for 127.0.0.1 at 2018-04-01 14:50:59 -0300
+Processing by CommentsController#index as */*
+  Parameters: {"entry_id"=>"1", "comment"=>{}}
+  [1m[36mEntry Load (0.8ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 ORDER BY created_at DESC[0m  [["entry_id", 1]]
+Completed 200 OK in 4ms (Views: 0.8ms | ActiveRecord: 1.3ms)
+
+
+Started DELETE "/news/1/comments" for 127.0.0.1 at 2018-04-01 14:51:07 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/news/1/comments"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:51:13 -0300
+  
+ActionController::RoutingError (No route matches [DELETE] "/news/3/comments"):
+  
+actionpack (5.0.7) lib/action_dispatch/middleware/debug_exceptions.rb:53:in `call'
+web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `catch'
+web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.0.7) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.0.7) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.0.7) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+rack (2.0.4) lib/rack/runtime.rb:22:in `call'
+activesupport (5.0.7) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.0.7) lib/action_dispatch/middleware/static.rb:136:in `call'
+rack (2.0.4) lib/rack/sendfile.rb:111:in `call'
+railties (5.0.7) lib/rails/engine.rb:522:in `call'
+puma (3.11.3) lib/puma/configuration.rb:225:in `call'
+puma (3.11.3) lib/puma/server.rb:624:in `handle_request'
+puma (3.11.3) lib/puma/server.rb:438:in `process_client'
+puma (3.11.3) lib/puma/server.rb:302:in `block in run'
+puma (3.11.3) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+Started DELETE "/news/3/comments/1" for 127.0.0.1 at 2018-04-01 14:51:19 -0300
+Processing by CommentsController#destroy as */*
+  Parameters: {"author"=>"ERIA", "comment"=>"COmentario pro, el de arriba no sae na", "entry_id"=>"3", "id"=>"1"}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 AND "comments"."id" = $2 LIMIT $3[0m  [["entry_id", 3], ["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[31mDELETE FROM "comments" WHERE "comments"."id" = $1[0m  [["id", 1]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 9ms (Views: 0.5ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/news/3/comments/1" for 127.0.0.1 at 2018-04-01 14:51:25 -0300
+Processing by CommentsController#show as */*
+  Parameters: {"entry_id"=>"3", "id"=>"1", "comment"=>{}}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT  "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 AND "comments"."id" = $2 LIMIT $3[0m  [["entry_id", 3], ["id", 1], ["LIMIT", 1]]
+Completed 404 Not Found in 7ms (ActiveRecord: 3.0ms)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Comment with 'id'=1 [WHERE "comments"."entry_id" = $1]):
+  
+app/controllers/comments_controller.rb:11:in `show'
+Started GET "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:51:29 -0300
+Processing by CommentsController#index as */*
+  Parameters: {"entry_id"=>"3", "comment"=>{}}
+  [1m[36mEntry Load (0.8ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (5.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 ORDER BY created_at DESC[0m  [["entry_id", 3]]
+Completed 200 OK in 11ms (Views: 1.5ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:52:18 -0300
+Processing by CommentsController#create as */*
+  Parameters: {"author"=>"ERIA", "comment"=>"COmentario pro, el de arriba no sae na, mentira sae caleta", "entry_id"=>"3"}
+  [1m[36mEntry Load (0.6ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Unpermitted parameter: entry_id
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.5ms)[0m  [1m[32mINSERT INTO "comments" ("author", "comment", "entry_id", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["author", "ERIA"], ["comment", "COmentario pro, el de arriba no sae na, mentira sae caleta"], ["entry_id", 3], ["created_at", "2018-04-01 17:52:18.645118"], ["updated_at", "2018-04-01 17:52:18.645118"]]
+  [1m[35m (33.1ms)[0m  [1m[35mCOMMIT[0m
+Completed 200 OK in 42ms (Views: 0.7ms | ActiveRecord: 36.5ms)
+
+
+Started GET "/news/3/comments" for 127.0.0.1 at 2018-04-01 14:52:27 -0300
+Processing by CommentsController#index as */*
+  Parameters: {"entry_id"=>"3", "comment"=>{}}
+  [1m[36mEntry Load (0.3ms)[0m  [1m[34mSELECT  "entries".* FROM "entries" WHERE "entries"."id" = $1 ORDER BY "entries"."created_at" DESC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."entry_id" = $1 ORDER BY created_at DESC[0m  [["entry_id", 3]]
+Completed 200 OK in 4ms (Views: 1.4ms | ActiveRecord: 0.6ms)
+
+

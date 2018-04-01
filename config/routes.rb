@@ -11,20 +11,10 @@ Rails.application.routes.draw do
   delete '/logout',  to: 'sessions#destroy'
   get '/administrator', to: 'static_pages#administrator'
 
-  resources :users
-  resources :entries do
-    resources :comments
-  end
-
   #API
-  namespace 'api' do
-    namespace 'v1' do
-      resources :entries do
-        resources :comments
-      end
-    end
-  end
-
+resources :entries, path: 'news' do
+  resources :comments
+end
 
 
 
