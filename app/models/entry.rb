@@ -6,7 +6,8 @@ class Entry < ApplicationRecord
   validates :title, presence: true
   validates :body, presence: true
 
-  attr_readonly :id, :created_at
+  attr_readonly :id
+  attr_readonly :created_at
 
   def as_json(options={})
     opts ={:only => [:id, :author, :comment, :created_at]}
