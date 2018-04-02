@@ -1,6 +1,4 @@
 class EntriesController < ApplicationController
-  before_action :set_headers
-
   def index
     entries = Entry.order('created_at DESC');
     render json: entries, status: :ok
@@ -40,9 +38,4 @@ class EntriesController < ApplicationController
   def entry_params
     params.permit(:title, :subtitle, :body)
   end
-
-  def set_headers
-    response.headers["Content-Type"] = "application/json"
-  end
-
 end

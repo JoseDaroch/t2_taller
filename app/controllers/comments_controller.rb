@@ -1,6 +1,4 @@
 class CommentsController < ApplicationController
-  before_action :set_headers
-
   def index
     entry = Entry.find(params[:entry_id])
     comments = entry.comments.order('created_at DESC');
@@ -44,9 +42,4 @@ class CommentsController < ApplicationController
   def comment_params
     params.permit(:author, :comment)
   end
-
-  def set_headers
-    response.headers["Content-Type"] = "application/json"
-  end
-
 end
