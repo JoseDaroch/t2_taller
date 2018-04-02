@@ -4,22 +4,22 @@ class CommentsController < ApplicationController
   def index
     entry = Entry.find(params[:entry_id])
     comments = entry.comments.order('created_at DESC');
-    render json: {status: 'SUCCESS', message: 'Loaded comments', data: comments}, status: :ok
+    render json: comments, status: :ok
   end
 
   def show
     entry = Entry.find(params[:entry_id])
     comment = entry.comments.find(params[:id])
-    render json: {status: 'SUCCESS', message: 'Loaded entry', data: comment}, status: :ok
+    render json: comment, status: :ok
   end
 
   def create
     entry = Entry.find(params[:entry_id])
     comment = entry.comments.new(comment_params)
     if comment.save
-      render json: {status: 'SUCCESS', message: 'Created comment', data: comment}, status: :created
+      render json: comment, status: :created
     else
-      render json: {status: 'ERROR', message: 'Comment not saved', data: comment.errors}, status: :unprocessable_entity
+      render json: comment.errors, status: :unprocessable_entity
     end
   end
 
@@ -27,16 +27,16 @@ class CommentsController < ApplicationController
     entry = Entry.find(params[:entry_id])
     comment = entry.comments.find(params[:id])
     comment.destroy
-    render json: {status: 'SUCCESS', message: 'Deleted comment', data: comment}, status: :ok
+    render json: comment, status: :ok
   end
 
   def update
     entry = Entry.find(params[:entry_id])
     comment = entry.comments.find(params[:id])
     if comment.update_attributes(comment_params)
-      render json: {status: 'SUCCESS', message: 'Updated comment', data: comment}, status: :ok
+      render json: comment, status: :ok
     else
-      render json: {status: 'ERROR', message: 'Comment not updated', data: comment.errors}, status: :unprocessable_entity
+      render json: comment.errors, status: :unprocessable_entity
     end
   end
 
