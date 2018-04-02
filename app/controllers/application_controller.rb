@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::API
-  include SessionsHelper
+  rescue_from ActiveRecord::RecordNotFound, :with => :record_not_found
 
   private
     # Confirms a logged-in user.
