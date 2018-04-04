@@ -15,7 +15,7 @@ class CommentsController < ApplicationController
     entry = Entry.find(params[:entry_id])
     comment = entry.comments.new(comment_params)
     if comment.save
-      render json: comment, status: :created, location: comment_url(comment)
+      render json: comment, status: :created, location: entry_comment_url(comment)
     else
       render json: comment.errors, status: :unprocessable_entity
     end
