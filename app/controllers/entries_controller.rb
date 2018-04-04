@@ -12,7 +12,7 @@ class EntriesController < ApplicationController
   def create
     entry = Entry.new(entry_params)
     if entry.save
-      render json: entry, status: :created
+      render json: entry, status: :created, location: entry_url(entry)
     else
       render json: entry.errors, status: :unprocessable_entity
     end
